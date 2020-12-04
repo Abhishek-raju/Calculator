@@ -3,3 +3,74 @@
 body {
   font-family: "Roboto", sans-serif;
 }
+
+.calc-btn {
+  background-color: silver;
+  color: black;
+  width: 25px;
+  height: 45px;
+  border: 1px solid rgb(230, 189, 8);
+  text-align: center;
+  cursor: pointer;
+  font-style: 32px;
+  font-weight: 600;
+  padding-top: 3px;
+}
+
+.calc-btn:hover {
+  background: rgb(102, 107, 102);
+}
+
+.row {
+  display: table;
+  table-layout: fixed;
+  width: 400px;
+}
+
+.column {
+  display: table-cell;
+}
+
+#calc-zero {
+  width: 51.6px;
+  border-radius: 0 0 0 7px;
+}
+
+#calc-clear {
+  font-weight: bold;
+  width: 51.6px;
+}
+
+#calc-display-val {
+  height: 80px;
+  color: white;
+  text-align: right;
+  border-left: 3px solid grey;
+  border-right: 3px solid grey;
+  border-top: 3px solid grey;
+  font-size: 40px;
+  background-color: #383838;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 12px;
+  border-radius: 7px 7px 0 0;
+}
+
+.calc-btn-operator {
+  background: orange;
+  color: black;
+  font-weight: bold;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+}
+
+#calc-equals {
+  border-radius: 0 0 7px 0;
+}
+
+#calc-parent {
+  margin-left: calc(50% - 200px);
+}

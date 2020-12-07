@@ -25,14 +25,15 @@ let oneBtn = document.getElementById("calc-equals");
 
 let displayVal = "0";
 let pendingVal;
-let EalStringArray = [];
+let evalStringArray = [];
 
 let calNumBtns = document.getElementsByClassName("calc-btn-num");
 let calcOperatorsBtns = document.getElementsByClassName("calc-btn-operator");
 
 //Function to display the typed  numbers
-var updateDisplayVal = (clickObj) => {
-  let btntxt = clickObj.target.innerText;
+
+let updateDisplayVal = (clickVV) => {
+  let btntxt = clickVV.target.innerText;
 
   if (displayVal === "0") displayVal = " ";
   displayVal += btntxt;
@@ -69,8 +70,55 @@ decimalBtn.onclick = () => {
   displayValElement.innerText = displayVal;
 };
 
-/*
-for (let i = 0; i < calcOperatorsBtns; i++) {
-  calcOperatorsBtns[i].addEventListener("click", performOperation, false);
+//Arethimetic Operation
+
+function performOperation(clickobj) {
+  let operator = clickobj.target.innerText;
+
+  switch (operator) {
+    case "+":
+      pendingVal = displayVal;
+      displayVal = "0";
+      displayValElement.innerText = displayVal;
+      evalStringArray.push(pendingVal);
+      evalStringArray.push("+");
+    case "-":
+      pendingVal = displayVal;
+      displayVal = "0";
+      displayValElement.innerText = displayVal;
+      evalStringArray.push(pendingVal);
+      evalStringArray.push("-");
+      break;
+
+    case "x":
+      pendingVal = displayVal;
+      displayVal = "0";
+      displayValElement.innerText = displayVal;
+      evalStringArray.push(pendingVal);
+      evalStringArray.push("*");
+      break;
+
+    case "÷":
+      pendingVal = displayVal;
+      displayVal = "0";
+      displayValElement.innerText = displayVal;
+      evalStringArray.push(pendingVal);
+      evalStringArray.push("/");
+      break;
+
+    case "=":
+      evalStringArray.push(displayVal);
+      let evaluation = eval(evalStringArray.join(" "));
+      displayVal = evaluation + " ";
+      displayValElement.innerText = displayVal;
+      evalStringArray = [];
+      break;
+
+    default:
+      break;
+  }
 }
-*/
+
+for (let j = 0; j < calcOperatorsBtns.length; j++) {
+  calcOperatorsBtns[j].addEventListener("click", performOperation, false);
+}

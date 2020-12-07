@@ -43,7 +43,25 @@ for (let i = 0; i < calNumBtns.length; i++) {
   calNumBtns[i].addEventListener("click", updateDisplayVal, false);
 }
 
-//
+//Clear Button
+
+clearBtn.onclick = () => {
+  displayVal = "0";
+  pendingVal = undefined;
+  evalStringArray = [];
+  displayValElement.innerText = displayVal;
+};
+
+//BackSpace Button
+backspaceBtn.onclick = () => {
+  let lengthofDisplayVal = displayVal.length;
+  displayVal = displayVal.slice(0, lengthofDisplayVal - 1);
+
+  if (displayVal === " ") displayVal = "0";
+
+  displayValElement.innerText = displayVal;
+};
+
 /*
 for (let i = 0; i < calcOperatorsBtns; i++) {
   calcOperatorsBtns[i].addEventListener("click", performOperation, false);

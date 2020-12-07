@@ -62,6 +62,13 @@ backspaceBtn.onclick = () => {
   displayValElement.innerText = displayVal;
 };
 
+//Decimal Button
+
+decimalBtn.onclick = () => {
+  if (!displayVal.includes(".")) displayVal += ".";
+  displayValElement.innerText = displayVal;
+};
+
 /*
 for (let i = 0; i < calcOperatorsBtns; i++) {
   calcOperatorsBtns[i].addEventListener("click", performOperation, false);
